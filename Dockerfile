@@ -15,7 +15,8 @@ ENV DEBIAN_FRONTEND=noninteractive \
 # For Fastlane
 ENV LC_ALL=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8 \
-    LANG=en_US.UTF-8
+    LANG=en_US.UTF-8 \
+    LC_CTYPE=en_US.UTF-8
 
 # Install basics
 RUN apt-get update &&  \
@@ -25,7 +26,7 @@ RUN apt-get update &&  \
     apt-get install -y nodejs && \
     npm install -g npm@"$NPM_VERSION" cordova@"$CORDOVA_VERSION" ionic@"$IONIC_VERSION" yarn@"$YARN_VERSION" && \
     npm cache clear --force && \
-    gem install sass scss_lint && \
+    gem install sass scss_lint bundler && \
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     dpkg --unpack google-chrome-stable_current_amd64.deb && \
     apt-get install -f -y && \
