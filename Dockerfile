@@ -12,12 +12,6 @@ ENV DEBIAN_FRONTEND=noninteractive \
     # https://github.com/SeleniumHQ/docker-selenium/issues/87
     DBUS_SESSION_BUS_ADDRESS=/dev/null
 
-# For Fastlane
-ENV LC_ALL=en_US.UTF-8 \
-    LANGUAGE=en_US.UTF-8 \
-    LANG=en_US.UTF-8 \
-    LC_CTYPE=en_US.UTF-8
-
 # Install basics
 RUN apt-get update &&  \
     apt-get install -y git wget curl unzip ruby ruby-dev build-essential && \
